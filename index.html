@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Psychrometric chart</title>
+    <link rel="stylesheet" href="sins/MOMstyle.css" />
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js'></script>
+    <script type="text/javascript" >
+        function body() {                                                      //body onload
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            // context.clearRect(0, 0, canvas.width, canvas.height);
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+        }
+        //variables
+        var flag=0;
+        var x = 700;
+        var y_start = 700;
+        var y_end = 701;
+        var z_start = -700;
+        var z_end = -700;
+        const time7 = 10;
+        const time8 = 10;
+        const time9 = 10;
+
+
+        function check1() {
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+            draw1();
+            function draw1() {
+                context.clearRect(0, 0, draw1.width, draw1.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(y_start, x);
+                context.lineTo(y_end, x);
+                context.strokeStyle = "green";
+                context.stroke();
+                y_end += 1;
+                if (y_end <= 1420) {
+                    setTimeout(draw1, time7);
+                }else{
+                    clearTimeout(check1);
+                }
+
+            }
+
+            draw2();
+
+            function draw2() {
+                context.clearRect(0, 0, draw2.width, draw2.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(x, y_start);
+                context.lineTo(x, y_end);
+                context.strokeStyle = "red";
+                context.stroke();
+                y_end += 1;
+                if (y_end <= 945) {
+                    setTimeout(draw2, time8);
+                }
+            }
+
+            draw3();
+
+            function draw3() {
+                context.clearRect(0, 0, draw3.width, draw3.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.strokeStyle = "blue";
+                context.moveTo(-z_start, x);
+                context.lineTo(-z_end, x);
+                context.stroke();
+                z_end += 1;
+                if (z_end <= -580) {
+                    setTimeout(draw3, time9);
+                }else{
+                    clearTimeout(check2);
+                }
+
+            }
+
+            if (document.getElementById('checkbox1').checked) {
+                document.getElementById('check1').style.visibility = 'visible';
+                document.getElementById('check3').style.visibility = 'hidden';
+                document.getElementById('check2').style.visibility = 'hidden';
+                // document.getElementById('simscreen').style.visibility = 'hidden';
+            } else {
+                // document.getElementById('simscreen1').style.visibility = 'visible';
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        // //variables
+        var x1 = 900;
+        var y1_start = 900;
+        var y1_end = 901;
+        var z1_start = -900;
+        var z1_end = -900;
+        const time1 = 10;
+        const time2=10;
+        const time3=10;
+        function check2(){
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            draw1();
+            function draw1() {
+                context.clearRect(0, 0, draw1.width, draw1.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(y1_start, x1);
+                context.lineTo(y1_end, x1);
+                context.strokeStyle = "green";
+                context.stroke();
+                y1_end += 1;
+                if (y1_end <= 1420) {
+                    setTimeout(draw1, time1);
+                }else{
+                    clearTimeout(check3);
+                }
+
+            }
+            draw2();
+            function draw2() {
+                context.clearRect(0, 0, draw2.width, draw2.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(x1, y1_start);
+                context.lineTo(x1, y1_end);
+                context.strokeStyle = "red";
+                context.stroke();
+                y1_end += 1;
+                if (y1_end <= 945) {
+                    setTimeout(draw2, time2);
+                }
+            }
+            draw3();
+            function draw3() {
+                context.clearRect(0, 0, draw3.width, draw3.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.strokeStyle = "blue";
+                context.moveTo(-z1_start,x1);
+                context.lineTo(-z1_end, x1);
+                context.stroke();
+                z1_end += 1;
+                if (z1_end <= -130) {
+                    setTimeout(draw3, time3);
+                }else{
+                    clearInterval(check2);
+                }
+            }
+
+            if(document.getElementById('checkbox2').checked)
+            {
+                document.getElementById('check2').style.visibility = 'visible';
+                document.getElementById('check1').style.visibility = 'hidden';
+                document.getElementById('check3').style.visibility = 'hidden';
+                // document.getElementById('simscreen2').style.visibility = 'visible';
+            }
+            else
+            {
+                // document.getElementById('simscreen2').style.visibility = 'hidden';
+
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // variables
+        var x3 = 750;
+        var y3_start = 750;
+        var y3_end = 751;
+        var z3_start = -530;
+        var z3_end = -750;
+        const time11 = 10;
+        const time12 = 10;
+        const time13 = 10;
+
+        function check3() {
+            var canvas = document.getElementById('simscreen');
+            var context = canvas.getContext('2d');
+            draw12();
+
+            function draw12() {
+                context.clearRect(0, 0, draw12.width, draw12.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(y3_start, x3);
+                context.lineTo(y3_end, x3);
+                context.strokeStyle = "green";
+                context.stroke();
+                y3_end += 1;
+                if (y3_end <= 1420) {
+                    setTimeout(draw12, time11);
+                }
+
+            }
+
+            draw22();
+
+            function draw22() {
+                context.clearRect(0, 0, draw22.width, draw22.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(x3, y3_start);
+                context.lineTo(x3, y3_end);
+                context.strokeStyle = "red";
+                context.stroke();
+                y3_end += 1;
+                if (y3_end <= 945) {
+                    setTimeout(draw22, time12);
+                }
+            }
+
+            draw32();
+
+            function draw32() {
+                context.clearRect(0, 0, draw32.width, draw32.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.strokeStyle = "blue";
+                context.moveTo(-z3_start, x3);
+                context.lineTo(-z3_end, x3);
+                context.stroke();
+                z3_end += 1;
+                if (z3_end <= -510) {
+                    setTimeout(draw32, time13);
+                } else {
+                    clearTimeout(check3);
+                }
+                if (document.getElementById('checkbox3').checked) {
+                    document.getElementById('check1').style.visibility = 'hidden';
+                    document.getElementById('check2').style.visibility = 'hidden';
+                    document.getElementById('check3').style.visibility = 'visible';
+                    // document.getElementById('simscreen3').style.visibility = 'visible';
+                } else {
+                    // document.getElementById('simscreen3').style.visibility = 'hidden';
+                    document.getElementById('check3').style.visibility = 'hidden';
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body onload="body();" >
+<noscript>
+    The simulation requires JavaScript to be enabled.
+</noscript>
+<div id="container">
+    <div id="simtitle">Psychrometric chart</div>
+    <div id="scroll_div" style="max-height:390px; max-width:590px;overflow: scroll;">
+        <canvas id="simscreen" height="1032px" width="1522px" >
+
+            <canvas id="simscreen1" height="1032px" width="1522px" >
+
+                <canvas id="simscreen2" height="1032px" width="1522px" >
+
+                    <canvas id="simscreen3" height="1032px" width="1522px" >
+                    </canvas>
+                </canvas></canvas>
+        </canvas>
+
+        <div style="width:500px;">
+        </div>
+    </div>
+    <div id="titleincanvas"></div>
+    <div id="commentboxleft"></div>
+    <div id="commentboxright"></div>
+    <div id="vartitle">VARIABLES</div>
+
+    <div id="variables">
+
+        <div class="variable">
+            <div class="varname">
+                <p style="position:absolute;left:-10px; top:0px;font-family:verdana; font-size:14px;">Dry bulb temp:<br><br>Humidity Ratio:<br><br>Relative humidity:<br><br>wet bulb temp:<br><br><br>Enthalpy:<br></p>
+                <p id="check1"style="position:absolute;color:red;left:80px; top:13px;font-family:verdana; font-size:14px;">19.5(<sup>o</sup>C)<br><br><br>0.009gm<br><br><br>69.9%<br><br><br>14(<sup>o</sup>C)<br><br><br>39.6 J</p>
+                <p id="check2"style="position:absolute;color:blue;left:80px; top:13px;font-family:verdana; font-size:14px;">29(<sup>o</sup>C)<br><br><br>0.002gm<br><br><br>8%<br><br><br>-2(<sup>o</sup>C)<br><br><br>0 J</p>
+                <p id="check3"style="position:absolute;color:green;left:80px; top:13px;font-family:verdana; font-size:14px;">22.5(<sup>o</sup>C)<br><br><br>0.007gm<br><br><br>48%<br><br><br>10(<sup>o</sup>C)<br><br><br>30 J</p>
+
+            </div>
+        </div>
+    </div>
+    <!--    DND-Title of region for controls display-->
+    <div id="ctrltitle">CONTROLS</div>
+    <!-- Region for User controls of simulation-->
+    <div id="controls" align="center">
+
+        EXAMPLE 1:<input type="checkbox" id="checkbox1"  name="chart" onclick="check1();">
+        EXAMPLE 2:<input type="checkbox" id="checkbox2"  name="chart" onclick="check2();">
+        EXAMPLE 3:<input type="checkbox" id="checkbox3"  name="chart" onclick="check3();"><br>
+
+        <button type="reset" id="Reset" onclick="location.reload();">Reset</button>
+    </div>
+    <!-- DND-Copyright display-->
+    <div id="copyright" title="Developer : SOLVEr"> Copyright &copy; SOLVE The Virtual Lab @ NITK Surathkal </div>
+
+</div>
+<!--   Container div close-->
+</body>
+</html>
