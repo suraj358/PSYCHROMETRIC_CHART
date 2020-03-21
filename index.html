@@ -28,7 +28,6 @@
         const time8 = 10;
         const time9 = 10;
 
-
         function check1() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
@@ -42,6 +41,7 @@
                 context.clearRect(0, 0, draw1.width, draw1.height);
                 context.beginPath();
                 context.lineWidth = 3;
+                context.arc(700,700,10,0,2*Math.PI,false);
                 context.moveTo(y_start, x);
                 context.lineTo(y_end, x);
                 context.strokeStyle = "green";
@@ -80,6 +80,8 @@
                 context.strokeStyle = "blue";
                 context.moveTo(-z_start, x);
                 context.lineTo(-z_end, x);
+                context.moveTo(700, 700);
+                context.lineTo(660, 620);
                 context.stroke();
                 z_end += 1;
                 if (z_end <= -580) {
@@ -90,7 +92,7 @@
 
             }
 
-            if (document.getElementById('checkbox1').checked) {
+            if (document.getElementById('radio1').checked) {
                 document.getElementById('check1').style.visibility = 'visible';
                 document.getElementById('check3').style.visibility = 'hidden';
                 document.getElementById('check2').style.visibility = 'hidden';
@@ -129,6 +131,7 @@
                 context.clearRect(0, 0, draw1.width, draw1.height);
                 context.beginPath();
                 context.lineWidth = 3;
+                context.arc(900,900,10,0,2*Math.PI,false);
                 context.moveTo(y1_start, x1);
                 context.lineTo(y1_end, x1);
                 context.strokeStyle = "green";
@@ -163,6 +166,8 @@
                 context.strokeStyle = "blue";
                 context.moveTo(-z1_start,x1);
                 context.lineTo(-z1_end, x1);
+                context.moveTo(900, 900);
+                context.lineTo(700, 580);
                 context.stroke();
                 z1_end += 1;
                 if (z1_end <= -130) {
@@ -172,7 +177,7 @@
                 }
             }
 
-            if(document.getElementById('checkbox2').checked)
+            if(document.getElementById('radio2').checked)
             {
                 document.getElementById('check2').style.visibility = 'visible';
                 document.getElementById('check1').style.visibility = 'hidden';
@@ -225,6 +230,7 @@
                 context.clearRect(0, 0, draw12.width, draw12.height);
                 context.beginPath();
                 context.lineWidth = 3;
+                context.arc(750,750,10,0,2*Math.PI,false);
                 context.moveTo(y3_start, x3);
                 context.lineTo(y3_end, x3);
                 context.strokeStyle = "green";
@@ -261,6 +267,8 @@
                 context.strokeStyle = "blue";
                 context.moveTo(-z3_start, x3);
                 context.lineTo(-z3_end, x3);
+                context.moveTo(750, 750);
+                context.lineTo(610, 670);
                 context.stroke();
                 z3_end += 1;
                 if (z3_end <= -510) {
@@ -268,7 +276,7 @@
                 } else {
                     clearTimeout(check3);
                 }
-                if (document.getElementById('checkbox3').checked) {
+                if (document.getElementById('radio3').checked) {
                     document.getElementById('check1').style.visibility = 'hidden';
                     document.getElementById('check2').style.visibility = 'hidden';
                     document.getElementById('check3').style.visibility = 'visible';
@@ -326,9 +334,9 @@
     <!-- Region for User controls of simulation-->
     <div id="controls" align="center">
 
-        EXAMPLE 1:<input type="checkbox" id="checkbox1"  name="chart" onclick="check1();">
-        EXAMPLE 2:<input type="checkbox" id="checkbox2"  name="chart" onclick="check2();">
-        EXAMPLE 3:<input type="checkbox" id="checkbox3"  name="chart" onclick="check3();"><br>
+        EXAMPLE 1:<input type="radio" id="radio1"  name="chart" onclick="check1();">
+        EXAMPLE 2:<input type="radio" id="radio2"  name="chart" onclick="check2();">
+        EXAMPLE 3:<input type="radio" id="radio3"  name="chart" onclick="check3();"><br>
 
         <button type="reset" id="Reset" onclick="location.reload();">Reset</button>
     </div>
