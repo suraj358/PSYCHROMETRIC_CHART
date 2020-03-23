@@ -18,7 +18,6 @@
             imageObj.src = 'graph2.png';
         }
         //variables
-        var flag=0;
         var x = 700;
         var y_start = 700;
         var y_end = 701;
@@ -27,6 +26,11 @@
         const time7 = 10;
         const time8 = 10;
         const time9 = 10;
+
+        var x11 = 580;
+        var y11_start = 700;
+        var y11_end = 701;
+        const time10=10;
 
         function check1() {
             var canvas = document.getElementById('simscreen');
@@ -81,7 +85,7 @@
                 context.moveTo(-z_start, x);
                 context.lineTo(-z_end, x);
                 context.moveTo(700, 700);
-                context.lineTo(660, 620);
+                context.lineTo(530, 600);
                 context.stroke();
                 z_end += 1;
                 if (z_end <= -580) {
@@ -90,6 +94,25 @@
                     clearTimeout(check2);
                 }
 
+            }
+            draw4();
+
+            function draw4() {
+                context.clearRect(0, 0, draw4.width, draw4.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.strokeStyle = "red";
+                context.arc(580,700,2,0,2*Math.PI,false);
+                context.stroke();
+                context.closePath();
+                context.moveTo(x11, y11_start);
+                context.lineTo(x11, y11_end);
+                context.strokeStyle = "brown";
+                context.stroke();
+                y11_end += 1;
+                if (y11_end <= 945) {
+                    setTimeout(draw4, time10);
+                }
             }
 
             if (document.getElementById('radio1').checked) {
@@ -120,9 +143,13 @@
         var y1_end = 901;
         var z1_start = -900;
         var z1_end = -900;
-        const time1 = 10;
-        const time2=10;
-        const time3=10;
+        const time1 = 1;
+        const time2=1;
+        const time3=1;
+        var x12 = 130;
+        var y12_start = 900;
+        var y12_end = 901;
+        const time22=10;
         function check2(){
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
@@ -167,13 +194,27 @@
                 context.moveTo(-z1_start,x1);
                 context.lineTo(-z1_end, x1);
                 context.moveTo(900, 900);
-                context.lineTo(700, 580);
+                context.lineTo(550, 720);
                 context.stroke();
                 z1_end += 1;
                 if (z1_end <= -130) {
                     setTimeout(draw3, time3);
                 }else{
                     clearInterval(check2);
+                }
+            }
+            draw21();
+            function draw21() {
+                context.clearRect(0, 0, draw21.width, draw21.height);
+                context.beginPath();
+                context.lineWidth = 3;
+                context.moveTo(x12, y12_start);
+                context.lineTo(x12, y12_end);
+                context.strokeStyle = "black";
+                context.stroke();
+                y12_end += 1;
+                if (y12_end <= 945) {
+                    setTimeout(draw21, time22);
                 }
             }
 
@@ -220,6 +261,11 @@
         const time11 = 10;
         const time12 = 10;
         const time13 = 10;
+
+        var x112 = 510;
+        var y112_start = 750;
+        var y112_end = 751;
+        const time811=10;
 
         function check3() {
             var canvas = document.getElementById('simscreen');
@@ -276,6 +322,25 @@
                 } else {
                     clearTimeout(check3);
                 }
+
+                draw211();
+
+                function draw211() {
+                    context.clearRect(0, 0, draw211.width, draw211.height);
+                    context.beginPath();
+                    context.lineWidth = 3;
+                    context.moveTo(x112, y112_start);
+                    context.lineTo(x112, y112_end);
+                    context.strokeStyle = "black";
+                    context.stroke();
+                    y112_end += 1;
+                    if (y112_end <= 105) {
+                        setTimeout(draw211, time811);
+                    }else {
+                        clearTimeout(check3);
+                    }
+                }
+
                 if (document.getElementById('radio3').checked) {
                     document.getElementById('check1').style.visibility = 'hidden';
                     document.getElementById('check2').style.visibility = 'hidden';
@@ -321,10 +386,11 @@
 
         <div class="variable">
             <div class="varname">
-                <p style="position:absolute;left:-10px; top:0px;font-family:verdana; font-size:14px;">Dry bulb temp:<br><br>Humidity Ratio:<br><br>Relative humidity:<br><br>wet bulb temp:<br><br><br>Enthalpy:<br></p>
-                <p id="check1"style="position:absolute;color:red;left:80px; top:13px;font-family:verdana; font-size:14px;">19.5(<sup>o</sup>C)<br><br><br>0.009gm<br><br><br>69.9%<br><br><br>14(<sup>o</sup>C)<br><br><br>39.6 J</p>
-                <p id="check2"style="position:absolute;color:blue;left:80px; top:13px;font-family:verdana; font-size:14px;">29(<sup>o</sup>C)<br><br><br>0.002gm<br><br><br>8%<br><br><br>-2(<sup>o</sup>C)<br><br><br>0 J</p>
-                <p id="check3"style="position:absolute;color:green;left:80px; top:13px;font-family:verdana; font-size:14px;">22.5(<sup>o</sup>C)<br><br><br>0.007gm<br><br><br>48%<br><br><br>10(<sup>o</sup>C)<br><br><br>30 J</p>
+                <p style="position:absolute;left:-10px; top:-10px;font-family:verdana; font-size:14px;">Dry bulb temp:<br><br>Humidity Ratio:<br><br>Relative humidity:<br><br>wetbulb temp:<br><br>Enthalpy:<br>
+                    <br>Dew pointtemp:<br></p>
+                <p id="check1"style="position:absolute;color:red;left:90px; top:5px;font-family:verdana; font-size:14px;">19.5(<sup>o</sup>C)<br><br><br>0.009gm<br><br><br>69.9%<br><br><br>14(<sup>o</sup>C)<br><br><br>39.6 J<br><br>100</p>
+                <p id="check2"style="position:absolute;color:blue;left:90px; top:5px;font-family:verdana; font-size:14px;">29(<sup>o</sup>C)<br><br><br>0.002gm<br><br><br>8%<br><br><br>-2(<sup>o</sup>C)<br><br>0 J<br><br><br>200</p>
+                <p id="check3"style="position:absolute;color:green;left:90px; top:5px;font-family:verdana; font-size:14px;">22.5(<sup>o</sup>C)<br><br><br>0.007gm<br><br><br>48%<br><br><br>10(<sup>o</sup>C)<br><br>30 J<br><br><br>300</p>
 
             </div>
         </div>
