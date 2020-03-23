@@ -27,8 +27,8 @@
         const time8 = 10;
         const time9 = 10;
 
-        var x11 = 580;
-        var y11_start = 790;
+        var x11 = 625;
+        var y11_start = 660;
         var y11_end = 701;
         const time10=10;
 
@@ -85,7 +85,7 @@
                 context.moveTo(-z_start, x);
                 context.lineTo(-z_end, x);
                 context.moveTo(700, 700);
-                context.lineTo(500, 650);
+                context.lineTo(625, 660);
                 context.stroke();
                 z_end += 1;
                 if (z_end <= -580) {
@@ -260,8 +260,8 @@
         const time13 = 10;
 
         var x112 = 610;
-        var y112_start = 850;
-        var y112_end = 751;
+        var y112_start = 670;
+        var y112_end = 671;
         const time811=10;
 
         function check3() {
@@ -331,10 +331,8 @@
                     context.strokeStyle = "black";
                     context.stroke();
                     y112_end += 1;
-                    if (y112_end <= 105) {
+                    if (y112_end <= 705) {
                         setTimeout(draw211, time811);
-                    }else {
-                        clearTimeout(check3);
                     }
                 }
 
