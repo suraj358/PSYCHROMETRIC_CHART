@@ -44,14 +44,14 @@
             function draw1() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.arc(700,700,5,0,2*Math.PI,false);
                 context.moveTo(y_start, x);
                 context.lineTo(y_end, x);
                 context.strokeStyle = "green";
                 context.stroke();
-                y_end += 10;
-                if (y_end <= 1420) {
+                y_end += 7;
+                if (y_end <= 1422) {
                     setTimeout(draw1, time);
                 }
                     else{
@@ -63,13 +63,13 @@
             function draw2() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.moveTo(x, y_start);
                 context.lineTo(x, y_end);
                 context.strokeStyle = "red";
                 context.stroke();
-                y_end += 1;
-                if (y_end <= 940) {
+                y_end += 8;
+                if (y_end <= 948) {
                     setTimeout(draw2, time);
                 }
                 // else{
@@ -81,7 +81,7 @@
             function draw3() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.strokeStyle = "blue";
                 context.moveTo(-z_start, x);
                 context.lineTo(-z_end, x);
@@ -101,14 +101,14 @@
             function draw4() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.strokeStyle = "red";
                 context.moveTo(x11, y11_start);
                 context.lineTo(x11, y11_end);
                 context.strokeStyle = "brown";
                 context.stroke();
-                y11_end += 10;
-                if (y11_end <= 945) {
+                y11_end += 7;
+                if (y11_end <= 948) {
                     setTimeout(draw4, time);
                 }
                 // else{
@@ -159,13 +159,13 @@
             function draw1() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.arc(900,900,5,0,2*Math.PI,false);
                 context.moveTo(y1_start, x1);
                 context.lineTo(y1_end, x1);
                 context.strokeStyle = "green";
                 context.stroke();
-                y1_end += 10;
+                y1_end += 9;
                 if (y1_end <= 1420) {
                     setTimeout(draw1, time1);
                 }
@@ -178,13 +178,13 @@
             function draw2() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.moveTo(x1, y1_start);
                 context.lineTo(x1, y1_end);
                 context.strokeStyle = "red";
                 context.stroke();
-                y1_end += 10;
-                if (y1_end <= 943) {
+                y1_end += 8;
+                if (y1_end <= 945) {
                     setTimeout(draw2, time1);
                 }
             }
@@ -192,7 +192,7 @@
             function draw3() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.strokeStyle = "blue";
                 context.moveTo(-z1_start,x1);
                 context.lineTo(-z1_end, x1);
@@ -211,7 +211,7 @@
             function draw21() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.moveTo(x12, y12_start);
                 context.lineTo(x12, y12_end);
                 context.strokeStyle = "black";
@@ -263,7 +263,7 @@
             function draw12() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.arc(750, 750, 5, 0, 2 * Math.PI, false);
                 context.moveTo(y3_start, x3);
                 context.lineTo(y3_end, x3);
@@ -281,7 +281,7 @@
             function draw22() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.moveTo(x3, y3_start);
                 context.lineTo(x3, y3_end);
                 context.strokeStyle = "red";
@@ -297,7 +297,7 @@
             function draw32() {
                 // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
-                context.lineWidth = 1;
+                context.lineWidth = 2;
                 context.strokeStyle = "blue";
                 context.moveTo(-z3_start, x3);
                 context.lineTo(-z3_end, x3);
@@ -317,7 +317,7 @@
                 function draw211() {
                     // context.clearRect(0, 0, canvas.width, canvas.height);
                     context.beginPath();
-                    context.lineWidth = 1;
+                    context.lineWidth = 2;
                     context.moveTo(x112, y112_start);
                     context.lineTo(x112, y112_end);
                     context.strokeStyle = "black";
