@@ -28,16 +28,12 @@
         var x11 = 625;
         var y11_start = 660;
         var y11_end = 701;
-        var time=1;
-        // const time7 = 10;
-        // const time8 = 10;
-        // const time9 = 10;
-        // const time10=10;
+        var time=10;
 
         function check1() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
-            context.clearRect(0, 0, canvas.width, canvas.height);
+            // context.clearRect(0, 0, canvas.width, canvas.height);
             var imageObj = new Image();
             imageObj.onload = function () {
                 context.drawImage(imageObj, 90, 60);
@@ -54,13 +50,13 @@
                 context.lineTo(y_end, x);
                 context.strokeStyle = "green";
                 context.stroke();
-                y_end += 20;
-                if (y_end <= 1423) {
+                y_end += 10;
+                if (y_end <= 1420) {
                     setTimeout(draw1, time);
                 }
-                    // else{
-                //     clearTimeout(draw1);
-                // }
+                    else{
+                    clearTimeout(draw1);
+                }
             }
 
             draw2();
@@ -73,7 +69,7 @@
                 context.strokeStyle = "red";
                 context.stroke();
                 y_end += 1;
-                if (y_end <= 945) {
+                if (y_end <= 940) {
                     setTimeout(draw2, time);
                 }
                 // else{
@@ -92,7 +88,7 @@
                 context.moveTo(700, 700);
                 context.lineTo(625, 660);
                 context.stroke();
-                z_end += 1;
+                z_end += 10;
                 if (z_end <= -580) {
                     setTimeout(draw3, time);
                 }
@@ -144,8 +140,8 @@
         var y1_end = 901;
         var z1_start = -900;
         var z1_end = -900;
-        var x12 = 552;
-        var y12_start = 730;
+        var x12 = 545;
+        var y12_start = 725;
         var y12_end = 725;
         const time1=1;
 
@@ -188,7 +184,7 @@
                 context.strokeStyle = "red";
                 context.stroke();
                 y1_end += 10;
-                if (y1_end <= 945) {
+                if (y1_end <= 943) {
                     setTimeout(draw2, time1);
                 }
             }
@@ -201,7 +197,7 @@
                 context.moveTo(-z1_start,x1);
                 context.lineTo(-z1_end, x1);
                 context.moveTo(900, 900);
-                context.lineTo(550, 725);
+                context.lineTo(545, 725);
                 context.stroke();
                 z1_end += 10;
                 if (z1_end <= -128) {
