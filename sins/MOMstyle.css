@@ -82,14 +82,14 @@ div#copyright
 /*	width: 570px;*/
 /*}*/
 
-/*canvas#simscreen*/
-/*{*/
-/*	position:absolute;*/
-/*	left:100px;*/
-/*	top:100px;*/
-/*	height: 1000px;*/
-/*	width: 1002px;*/
-/*}*/
+canvas#simscreen
+{
+	position:absolute;
+	left:100px;
+	top:100px;
+	height:1032px;
+	width:1522px;
+}
 
 /*div#commentboxleft*/
 /*{*/
