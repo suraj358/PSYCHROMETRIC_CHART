@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <title>Psychrometric chart</title>
     <link rel="stylesheet" href="sins/MOMstyle.css" />
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js'></script>
+    <script type="text/javascript" src='sins/jquery.min.js'></script>
+    <script type="text/javascript" src='sins/jquery-ui.min.js'></script>
+    <!--    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
+    <!--    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js'></script>-->
     <script type="text/javascript" >
+
         function body() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
             var imageObj = new Image();
             imageObj.onload = function () {
-                context.drawImage(imageObj, 60, 90);
+                context.drawImage(imageObj, 90, 60);
             };
             imageObj.src = 'graph2.png';
         }
-
         //variables
         var x = 700;
         var y_start = 700;
@@ -26,15 +28,16 @@
         var x11 = 625;
         var y11_start = 660;
         var y11_end = 701;
-
-        const time7 = 10;
-        const time8 = 10;
-        const time9 = 10;
-        const time10=10;
+        var time=10;
+        // const time7 = 10;
+        // const time8 = 10;
+        // const time9 = 10;
+        // const time10=10;
 
         function check1() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
             var imageObj = new Image();
             imageObj.onload = function () {
                 context.drawImage(imageObj, 90, 60);
@@ -43,7 +46,7 @@
 
             draw1();
             function draw1() {
-                context.clearRect(0, 0, draw1.width, draw1.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.arc(700,700,5,0,2*Math.PI,false);
@@ -53,15 +56,16 @@
                 context.stroke();
                 y_end += 1;
                 if (y_end <= 1418) {
-                    setTimeout(draw1, time7);
-                }else{
-                    clearTimeout(check1);
+                    setTimeout(draw1, time);
                 }
+                    // else{
+                //     clearTimeout(draw1);
+                // }
             }
 
             draw2();
             function draw2() {
-                context.clearRect(0, 0, draw2.width, draw2.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.moveTo(x, y_start);
@@ -70,13 +74,16 @@
                 context.stroke();
                 y_end += 1;
                 if (y_end <= 945) {
-                    setTimeout(draw2, time8);
+                    setTimeout(draw2, time);
                 }
+                // else{
+                //     clearTimeout(draw2);
+                // }
             }
 
             draw3();
             function draw3() {
-                context.clearRect(0, 0, draw3.width, draw3.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.strokeStyle = "blue";
@@ -87,15 +94,16 @@
                 context.stroke();
                 z_end += 1;
                 if (z_end <= -580) {
-                    setTimeout(draw3, time9);
-                }else{
-                    clearTimeout(check1);
+                    setTimeout(draw3, time);
                 }
+                // else{
+                //     clearTimeout(draw3);
+                // }
 
             }
             draw4();
             function draw4() {
-                context.clearRect(0, 0, draw4.width, draw4.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.strokeStyle = "red";
@@ -105,10 +113,11 @@
                 context.stroke();
                 y11_end += 1;
                 if (y11_end <= 945) {
-                    setTimeout(draw4, time10);
-                }else{
-                    clearTimeout(check1);
+                    setTimeout(draw4, time);
                 }
+                // else{
+                //     clearTimeout(draw4);
+                // }
             }
 
             if (document.getElementById('radio1').checked) {
@@ -135,19 +144,23 @@
         var y1_end = 901;
         var z1_start = -900;
         var z1_end = -900;
-        const time1 = 1;
-        const time2=1;
-        const time3=1;
         var x12 = 552;
         var y12_start = 730;
         var y12_end = 725;
-        const time22=10;
+        const time1=10;
+
         function check2(){
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
+
             draw1();
             function draw1() {
-                context.clearRect(0, 0, draw1.width, draw1.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.arc(900,900,5,0,2*Math.PI,false);
@@ -156,16 +169,17 @@
                 context.strokeStyle = "green";
                 context.stroke();
                 y1_end += 1;
-                if (y1_end <= 1390) {
+                if (y1_end <= 1420) {
                     setTimeout(draw1, time1);
-                }else{
-                    clearTimeout(check2);
                 }
+                // else{
+                //     clearTimeout(check2);
+                // }
 
             }
             draw2();
             function draw2() {
-                context.clearRect(0, 0, draw2.width, draw2.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.moveTo(x1, y1_start);
@@ -173,13 +187,13 @@
                 context.strokeStyle = "red";
                 context.stroke();
                 y1_end += 1;
-                if (y1_end <= 975) {
-                    setTimeout(draw2, time2);
+                if (y1_end <= 945) {
+                    setTimeout(draw2, time1);
                 }
             }
             draw3();
             function draw3() {
-                context.clearRect(0, 0, draw3.width, draw3.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.strokeStyle = "blue";
@@ -189,15 +203,16 @@
                 context.lineTo(550, 725);
                 context.stroke();
                 z1_end += 1;
-                if (z1_end <= -220) {
-                    setTimeout(draw3, time3);
-                }else{
-                    clearInterval(check2);
+                if (z1_end <= -128) {
+                    setTimeout(draw3, time1);
                 }
+                // else{
+                //     clearInterval(check2);
+                // }
             }
             draw21();
             function draw21() {
-                context.clearRect(0, 0, draw21.width, draw21.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.moveTo(x12, y12_start);
@@ -205,8 +220,8 @@
                 context.strokeStyle = "black";
                 context.stroke();
                 y12_end += 1;
-                if (y12_end <= 980) {
-                    setTimeout(draw21, time22);
+                if (y12_end <= 945) {
+                    setTimeout(draw21, time1);
                 }
             }
 
@@ -215,12 +230,9 @@
                 document.getElementById('check2').style.visibility = 'visible';
                 document.getElementById('check1').style.visibility = 'hidden';
                 document.getElementById('check3').style.visibility = 'hidden';
-                // document.getElementById('simscreen2').style.visibility = 'visible';
             }
             else
             {
-                // document.getElementById('simscreen2').style.visibility = 'hidden';
-
                 document.getElementById('check3').style.visibility = 'hidden';
             }
         }
@@ -234,32 +246,34 @@
         var y3_end = 751;
         var z3_start = -530;
         var z3_end = -750;
-        const time11 = 10;
-        const time12 = 10;
-        const time13 = 10;
 
         var x112 = 615;
         var y112_start = 670;
         var y112_end = 671;
-        const time811=10;
+        const time2=10;
 
         function check3() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
+            var imageObj = new Image();
+            imageObj.onload = function () {
+                context.drawImage(imageObj, 90, 60);
+            };
+            imageObj.src = 'graph2.png';
             draw12();
 
             function draw12() {
-                context.clearRect(0, 0, draw12.width, draw12.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
-                context.arc(750,750,5,0,2*Math.PI,false);
+                context.arc(750, 750, 5, 0, 2 * Math.PI, false);
                 context.moveTo(y3_start, x3);
                 context.lineTo(y3_end, x3);
                 context.strokeStyle = "green";
                 context.stroke();
                 y3_end += 1;
-                if (y3_end <= 1390) {
-                    setTimeout(draw12, time11);
+                if (y3_end <= 1420) {
+                    setTimeout(draw12, time2);
                 }
 
             }
@@ -267,7 +281,7 @@
             draw22();
 
             function draw22() {
-                context.clearRect(0, 0, draw22.width, draw22.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.moveTo(x3, y3_start);
@@ -275,15 +289,15 @@
                 context.strokeStyle = "red";
                 context.stroke();
                 y3_end += 1;
-                if (y3_end <= 975) {
-                    setTimeout(draw22, time12);
+                if (y3_end <= 945) {
+                    setTimeout(draw22, time2);
                 }
             }
 
             draw32();
 
             function draw32() {
-                context.clearRect(0, 0, draw32.width, draw32.height);
+                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 1;
                 context.strokeStyle = "blue";
@@ -293,16 +307,17 @@
                 context.lineTo(615, 670);
                 context.stroke();
                 z3_end += 1;
-                if (z3_end <= -520) {
-                    setTimeout(draw32, time13);
-                } else {
-                    clearTimeout(check3);
+                if (z3_end <= -510) {
+                    setTimeout(draw32, time2);
                 }
+                // else {
+                //     clearTimeout(check3);
+                // }
 
                 draw211();
 
                 function draw211() {
-                    context.clearRect(0, 0, draw211.width, draw211.height);
+                    // context.clearRect(0, 0, canvas.width, canvas.height);
                     context.beginPath();
                     context.lineWidth = 1;
                     context.moveTo(x112, y112_start);
@@ -310,8 +325,8 @@
                     context.strokeStyle = "black";
                     context.stroke();
                     y112_end += 1;
-                    if (y112_end <= 745) {
-                        setTimeout(draw211, time811);
+                    if (y112_end <= 708) {
+                        setTimeout(draw211, time2);
                     }
                 }
 
@@ -319,9 +334,7 @@
                     document.getElementById('check1').style.visibility = 'hidden';
                     document.getElementById('check2').style.visibility = 'hidden';
                     document.getElementById('check3').style.visibility = 'visible';
-                    // document.getElementById('simscreen3').style.visibility = 'visible';
                 } else {
-                    // document.getElementById('simscreen3').style.visibility = 'hidden';
                     document.getElementById('check3').style.visibility = 'hidden';
                 }
             }
@@ -330,6 +343,7 @@
 
     </script>
 </head>
+<!--<body>-->
 <body onload="body();" >
 <noscript>
     The simulation requires JavaScript to be enabled.
@@ -338,15 +352,6 @@
     <div id="simtitle">Psychrometric chart</div>
     <div id="scroll_div" style="max-height:390px; max-width:590px;overflow: scroll;">
         <canvas id="simscreen" height="1032px" width="1522px" >
-
-            <canvas id="simscreen1" height="1032px" width="1522px" >
-
-                <canvas id="simscreen2" height="1032px" width="1522px" >
-
-                    <canvas id="simscreen3" height="1032px" width="1522px" >
-                    </canvas>
-                </canvas>
-            </canvas>
         </canvas>
 
         <div style="width:200px;">
@@ -363,9 +368,9 @@
             <div class="varname">
                 <p style="position:absolute;left:-10px; top:-10px;font-family:verdana; font-size:12px;"><br>Dry bulb temp:<br><br>Humidity ratio:<br><br>Relative humidity:<br><br>Wet bulb temp:<br><br>Enthalpy:<br>
                     <br>Dew point temp:<br></p>
-                <p id="check1"style="position:absolute;color:red;left:110px; top:5px;font-family:verdana; font-size:12px;">19.5(<sup>o</sup>C)<br><br>0.009gm<br><br>69.9%<br><br>14(<sup>o</sup>C)<br><br>39.6 J<br><br>13</p>
-                <p id="check2"style="position:absolute;color:red;left:110px; top:5px;font-family:verdana; font-size:12px;">29(<sup>o</sup>C)<br><br>0.002gm<br><br>8%<br><br>-2(<sup>o</sup>C)<br><br>0 J<br><br>13</p>
-                <p id="check3"style="position:absolute;color:red;left:110px; top:5px;font-family:verdana; font-size:12px;">22.5(<sup>o</sup>C)<br><br>0.007gm<br><br>48%<br><br>10(<sup>o</sup>C)<br><br>30 J<br><br>300</p>
+                <p id="check1"style="position:absolute;color:red;left:105px; top:5px;font-family:verdana; font-size:12px;">19.5(<sup>o</sup>C)<br><br>0.0099kg<br><br>70%<br><br>15.98(<sup>o</sup>C)<br><br>44.7kg<br><br>13.9(<sup>o</sup>C)</p>
+                <p id="check2"style="position:absolute;color:red;left:105px; top:5px;font-family:verdana; font-size:12px;">29(<sup>o</sup>C)<br><br>0.0022kg<br><br>9%<br><br>12.44(<sup>o</sup>C)<br><br>34.85KJ<br><br>-6.25(<sup>o</sup>C)</p>
+                <p id="check3"style="position:absolute;color:red;left:105px; top:5px;font-family:verdana; font-size:12px;">22.5(<sup>o</sup>C)<br><br>0.0083kg<br><br>49%<br><br>15.68(<sup>o</sup>C)<br><br>43.74kg<br><br>11.29(<sup>o</sup>C)</p>
 
             </div>
         </div>
