@@ -135,14 +135,6 @@
                 document.getElementById('check3').style.visibility = 'hidden';
             }
         }
-
-
-
-
-
-
-
-
         // //variables
         var x1 = 900;
         var y1_start = 900;
@@ -261,10 +253,6 @@
                 document.getElementById('check3').style.visibility = 'hidden';
             }
         }
-
-
-
-
         // variables
         var x3 = 750;
         var y3_start = 750;
@@ -276,9 +264,9 @@
         var y112_start = 672;
         var y112_end = 671;
 
-        var x011 = 512;
-        var y011_start = 860;
-        var y011_end = 750;
+        // var x011 = 512;
+        // var y011_start = 1200;
+        // var y011_end = 671;
         var time2=1;
 
         function check3() {
@@ -359,20 +347,20 @@
                         setTimeout(draw211, time2);
                     }
                 }
-                draw011();
-                function draw011() {
-                    context.beginPath();
-                    context.lineWidth=2;
-                    context.moveTo(x011, y011_start);
-                    context.lineTo(x011, y011_end);
-                    context.strokeStyle = "brown";
-                    context.stroke();
-                    y011_end += 1;
-                    if (y011_end <= 450) {
-                        setTimeout(draw011, time);
-
-                    }
-                }
+                // draw011();
+                // function draw011() {
+                //     context.beginPath();
+                //     context.lineWidth=2;
+                //     context.moveTo(x011, y011_start);
+                //     context.lineTo(x011, y011_end);
+                //     context.strokeStyle = "brown";
+                //     context.stroke();
+                //     y011_end += 3;
+                //     if (y011_end <= 708) {
+                //         setTimeout(draw011, time2);
+                //
+                //     }
+                // }
 
                 if (document.getElementById('radio3').checked) {
                     document.getElementById('check1').style.visibility = 'hidden';
