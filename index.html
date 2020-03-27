@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Psychrometric chart</title>
     <link rel="stylesheet" href="sins/MOMstyle.css" />
-    <script type="text/javascript" src='sins/jquery.min.js'></script>
-    <script type="text/javascript" src='sins/jquery-ui.min.js'></script>
-    <!--    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>-->
-    <!--    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js'></script>-->
+    <script src='sins/jquery.min.js'></script>
+    <script src='sins/jquery-ui.min.js'></script>
     <script type="text/javascript" >
 
         function body() {
@@ -36,7 +34,7 @@
         function check1() {
             var canvas = document.getElementById('simscreen');
             var context = canvas.getContext('2d');
-            // context.clearRect(0, 0, canvas.width, canvas.height);
+            context.clearRect(0, 0, canvas.width, canvas.height);
             var imageObj = new Image();
             imageObj.onload = function () {
                 context.drawImage(imageObj, 90, 60);
@@ -45,26 +43,22 @@
 
             draw1();
             function draw1() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
-                context.arc(700,700,5,0,2*Math.PI,false);
+                context.arc(700,700,3,0,2*Math.PI,false);
+                context.fill();
                 context.moveTo(y_start, x);
                 context.lineTo(y_end, x);
-                context.strokeStyle = "green";
+                context.strokeStyle = "black";
                 context.stroke();
                 y_end += 7;
                 if (y_end <= 1422) {
                     setTimeout(draw1, time);
                 }
-                else{
-                    clearTimeout(draw1);
-                }
             }
 
             draw2();
             function draw2() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.moveTo(x, y_start);
@@ -75,14 +69,10 @@
                 if (y_end <= 948) {
                     setTimeout(draw2, time);
                 }
-                // else{
-                //     clearTimeout(draw2);
-                // }
             }
 
             draw3();
             function draw3() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.strokeStyle = "blue";
@@ -98,7 +88,6 @@
             }
             draw4();
             function draw4() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.moveTo(x11, y11_start);
@@ -162,26 +151,21 @@
 
             draw1();
             function draw1() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
-                context.arc(900,900,5,0,2*Math.PI,false);
+                context.arc(900,900,3,0,2*Math.PI,false);
+                context.fill();
                 context.moveTo(y1_start, x1);
                 context.lineTo(y1_end, x1);
-                context.strokeStyle = "green";
+                context.strokeStyle = "black";
                 context.stroke();
-                y1_end += 9;
+                y1_end += 10;
                 if (y1_end <= 1420) {
                     setTimeout(draw1, time1);
                 }
-                // else{
-                //     clearTimeout(check2);
-                // }
-
             }
             draw2();
             function draw2() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.moveTo(x1, y1_start);
@@ -195,7 +179,6 @@
             }
             draw3();
             function draw3() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.strokeStyle = "blue";
@@ -208,18 +191,14 @@
                 if (z1_end <= -128) {
                     setTimeout(draw3, time1);
                 }
-                // else{
-                //     clearInterval(check2);
-                // }
             }
             draw21();
             function draw21() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.moveTo(x12, y12_start);
                 context.lineTo(x12, y12_end);
-                context.strokeStyle = "black";
+                context.strokeStyle = "brown";
                 context.stroke();
                 y12_end += 10;
                 if (y12_end <= 945) {
@@ -235,7 +214,7 @@
                 context.lineTo(x01, y01_end);
                 context.strokeStyle = "brown";
                 context.stroke();
-                y01_end += 7;
+                y01_end += 6;
                 if (y01_end <= 950) {
                     setTimeout(draw01, time);
 
@@ -257,17 +236,17 @@
         var x3 = 750;
         var y3_start = 750;
         var y3_end = 751;
-        var z3_start = -530;
+        var z3_start = -900;
         var z3_end = -750;
 
         var x112 = 609;
         var y112_start = 672;
         var y112_end = 671;
 
-        // var x011 = 512;
-        // var y011_start = 1200;
-        // var y011_end = 671;
-        var time2=1;
+        var x011 = 512;
+        var y011_start = 750;
+        var y011_end = 801;
+        var time2=10;
 
         function check3() {
             var canvas = document.getElementById('simscreen');
@@ -281,13 +260,13 @@
             draw12();
 
             function draw12() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
-                context.arc(750, 750, 5, 0, 2 * Math.PI, false);
+                context.arc(750, 750, 3, 0, 2 * Math.PI, false);
+                context.fill();
                 context.moveTo(y3_start, x3);
                 context.lineTo(y3_end, x3);
-                context.strokeStyle = "green";
+                context.strokeStyle = "black";
                 context.stroke();
                 y3_end += 10;
                 if (y3_end <= 1420) {
@@ -299,7 +278,6 @@
             draw22();
 
             function draw22() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.moveTo(x3, y3_start);
@@ -315,7 +293,6 @@
             draw32();
 
             function draw32() {
-                // context.clearRect(0, 0, canvas.width, canvas.height);
                 context.beginPath();
                 context.lineWidth = 2;
                 context.strokeStyle = "blue";
@@ -324,54 +301,49 @@
                 context.moveTo(750, 750);
                 context.lineTo(610, 675);
                 context.stroke();
-                z3_end += 1;
-                if (z3_end <= -513) {
+                z3_end += 10;
+                if (z3_end <= -509) {
                     setTimeout(draw32, time2);
                 }
-                // else {
-                //     clearTimeout(check3);
-                // }
+            }
 
-                draw211();
+            draw211();
 
-                function draw211() {
-                    // context.clearRect(0, 0, canvas.width, canvas.height);
-                    context.beginPath();
-                    context.lineWidth = 2;
-                    context.moveTo(x112, y112_start);
-                    context.lineTo(x112, y112_end);
-                    context.strokeStyle = "black";
-                    context.stroke();
-                    y112_end += 1;
-                    if (y112_end <= 708) {
-                        setTimeout(draw211, time2);
-                    }
-                }
-                // draw011();
-                // function draw011() {
-                //     context.beginPath();
-                //     context.lineWidth=2;
-                //     context.moveTo(x011, y011_start);
-                //     context.lineTo(x011, y011_end);
-                //     context.strokeStyle = "brown";
-                //     context.stroke();
-                //     y011_end += 3;
-                //     if (y011_end <= 708) {
-                //         setTimeout(draw011, time2);
-                //
-                //     }
-                // }
-
-                if (document.getElementById('radio3').checked) {
-                    document.getElementById('check1').style.visibility = 'hidden';
-                    document.getElementById('check2').style.visibility = 'hidden';
-                    document.getElementById('check3').style.visibility = 'visible';
-                } else {
-                    document.getElementById('check3').style.visibility = 'hidden';
+            function draw211() {
+                context.beginPath();
+                context.lineWidth = 2;
+                context.moveTo(x112, y112_start);
+                context.lineTo(x112, y112_end);
+                context.strokeStyle = "brown";
+                context.stroke();
+                y112_end += 6;
+                if (y112_end <= 950) {
+                    setTimeout(draw211, time2);
                 }
             }
-        }
+            draw011();
+            function draw011() {
+                context.beginPath();
+                context.lineWidth=2;
+                context.moveTo(x011, y011_start);
+                context.lineTo(x011, y011_end);
+                context.strokeStyle = "brown";
+                context.stroke();
+                y011_end += 6;
+                if (y011_end <= 948) {
+                    setTimeout(draw011, time2);
 
+                }
+            }
+
+            if (document.getElementById('radio3').checked) {
+                document.getElementById('check1').style.visibility = 'hidden';
+                document.getElementById('check2').style.visibility = 'hidden';
+                document.getElementById('check3').style.visibility = 'visible';
+            } else {
+                document.getElementById('check3').style.visibility = 'hidden';
+            }
+        }
 
     </script>
 </head>
