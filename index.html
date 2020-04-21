@@ -13,7 +13,7 @@
             var context = canvas.getContext('2d');
             var imageObj = new Image();
             imageObj.onload = function () {
-                context.drawImage(imageObj, 10, 60);
+                context.drawImage(imageObj, -300, 10);
             };
             imageObj.src = 'graph2.png';
         }
@@ -354,7 +354,7 @@
 </noscript>
 <div id="container">
     <div id="simtitle">Psychrometric chart</div>
-    <div id="scroll_div" style="max-height:390px; max-width:590px;overflow: scroll;">
+    <div id="scroll_div" style="max-height:400px; max-width:550px;overflow: scroll;">
         <canvas id="simscreen" height="1032px" width="1522px" >
         </canvas>
 
