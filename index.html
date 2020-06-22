@@ -133,6 +133,7 @@
         var time2=10;
         function check1(value)
         {
+		
             if(value == 1){
                 // alert("hi 1");
                 var canvas = document.getElementById('simscreen');
@@ -166,21 +167,7 @@
 		
 
         //Volume
-
-        var x12 =  248;
-        var y12_start = 80;
-        var y12_end = 81;
-
-        var x22 = 195;
-        var y22_start = 80;
-        var y22_end = 81;
-
-        var x33 = 190;
-        var y33_start = 80;
-        var y33_end = 81;
-
-        var time1=10;
-		
+		//p:160  v:80
 		function draw() {
 			context.beginPath();
 			context.lineWidth = 2;
@@ -194,6 +181,7 @@
 			context.globalAlpha = 1;
 		}
 		
+		//p:320 v:160
 		function draw1() {
 			context.beginPath();
 			context.lineWidth = 2;
@@ -206,6 +194,7 @@
 			context.globalAlpha = 1;
 		}
 		
+		//p:500 v:200
 		function draw2() {
 			context.beginPath();
 			context.lineWidth = 2;
@@ -217,134 +206,6 @@
 			context.fill();
 			context.globalAlpha = 1;
 		}
-
-
-///VOLUME LINE
-	function draw11() {
-		context.beginPath();
-		context.lineWidth = 2;
-		context.moveTo(y12_start, x12);
-		context.lineTo(y12_end, x12);
-		context.strokeStyle = "green";
-		context.stroke();
-		y12_end += 7;
-		if (y12_end <= 1020) {
-			setTimeout(draw11, time1);
-			console.log(draw11);
-			// document.getElementById("p11").innerHTML="X = V-V<sub>f</sub>/V<sub>fg</sub>=0.157";
-			// document.getElementById('p1').style.visibility = 'hidden';
-
-		}
-	}
-        
-	function draw22() {
-		context.beginPath();
-		context.lineWidth = 2;
-		context.moveTo(y22_start, x22);
-		context.lineTo(y22_end, x22);
-		context.strokeStyle = "green";
-		context.stroke();
-		y22_end += 7;
-		if (y22_end <= 1020) {
-			setTimeout(draw22, time2);
-			console.log(draw22);
-			// document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.05m<sup>3</sup>/kg";
-		}
-	}
-
-	function draw33() {
-		context.beginPath();
-		context.lineWidth = 2;
-		context.moveTo(y33_start, x33);
-		context.lineTo(y33_end, x33);
-		context.strokeStyle = "green";
-		context.stroke();
-		y33_end += 7;
-		if (y33_end <= 1020) {
-			setTimeout(draw33, time2);
-			console.log(draw33);
-			// document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.10m<sup>3</sup>/kg";
-		}
-	}
-
-
-
-        function check2(value)
-        {
-            if(value == 1){
-                // alert("hi 1");
-                var canvas = document.getElementById('simscreen');
-                var context = canvas.getContext('2d');
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                var img = document.getElementById("image2");
-                context.drawImage(img, 5, -100);
-
-                draw11();
-                function draw11() {
-                    context.beginPath();
-                    context.lineWidth = 2;
-                    context.moveTo(y12_start, x12);
-                    context.lineTo(y12_end, x12);
-                    context.strokeStyle = "green";
-                    context.stroke();
-                    y12_end += 7;
-                    if (y12_end <= 1020) {
-                        setTimeout(draw11, time1);
-                        console.log(draw11);
-                        // document.getElementById("p11").innerHTML="X = V-V<sub>f</sub>/V<sub>fg</sub>=0.157";
-                        // document.getElementById('p1').style.visibility = 'hidden';
-
-                    }
-                }
-            }else if(value == 2){
-                var canvas = document.getElementById('simscreen');
-                var context = canvas.getContext('2d');
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                var img = document.getElementById("image2");
-                context.drawImage(img, 5, -300);
-                draw22();
-                function draw22() {
-                    context.beginPath();
-                    context.lineWidth = 2;
-                    context.moveTo(y22_start, x22);
-                    context.lineTo(y22_end, x22);
-                    context.strokeStyle = "green";
-                    context.stroke();
-                    y22_end += 7;
-                    if (y22_end <= 1020) {
-                        setTimeout(draw22, time2);
-                        console.log(draw22);
-                        // document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.05m<sup>3</sup>/kg";
-                    }
-                }
-            }
-            else if(value == 3){
-                var canvas = document.getElementById('simscreen');
-                var context = canvas.getContext('2d');
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                var img = document.getElementById("image2");
-                context.drawImage(img, 5, -400);
-                draw33();
-                function draw33() {
-                    context.beginPath();
-                    context.lineWidth = 2;
-                    context.moveTo(y33_start, x33);
-                    context.lineTo(y33_end, x33);
-                    context.strokeStyle = "green";
-                    context.stroke();
-                    y33_end += 7;
-                    if (y33_end <= 1020) {
-                        setTimeout(draw33, time2);
-                        console.log(draw33);
-                        // document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.10m<sup>3</sup>/kg";
-                    }
-                }
-            }else{
-            }
-        }
-		
-
-
 
 
 
