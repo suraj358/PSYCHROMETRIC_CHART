@@ -1,395 +1,535 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Psychrometric chart</title>
+    <title>Thermodynamics data handbook</title>
     <link rel="stylesheet" href="sins/MOMstyle.css" />
     <script src='sins/jquery.min.js'></script>
     <script src='sins/jquery-ui.min.js'></script>
-    <script type="text/javascript" >
 
-        function body() {
-            var canvas = document.getElementById('simscreen');
-            var context = canvas.getContext('2d');
-            var imageObj = new Image();
-            imageObj.onload = function () {
-                context.drawImage(imageObj, 10, 10);
-            };
-            imageObj.src = 'graph2.png';
-        }
-        //variables
-        var x = 700;
-        var y_start = 700;
-        var y_end = 701;
-        var z_start = -700;
-        var z_end = -700;
-        var x11 = 625;
-        var y11_start = 660;
-        var y11_end = 701;
-        var x0=580;
-        var y0_start = 700;
-        var y0_end = 701;
-        var time=10;
-
-        function check1() {
-            var canvas = document.getElementById('simscreen');
-            var context = canvas.getContext('2d');
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            var imageObj = new Image();
-            imageObj.onload = function () {
-                context.drawImage(imageObj, 90, 60);
-            };
-            imageObj.src = 'graph2.png';
-
-            draw1();
-            function draw1() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.arc(700,700,3,0,2*Math.PI,false);
-                context.fill();
-                context.moveTo(y_start, x);
-                context.lineTo(y_end, x);
-                context.strokeStyle = "black";
-                context.stroke();
-                y_end += 7;
-                if (y_end <= 1422) {
-                    setTimeout(draw1, time);
-                }
-            }
-
-            draw2();
-            function draw2() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x, y_start);
-                context.lineTo(x, y_end);
-                context.strokeStyle = "red";
-                context.stroke();
-                y_end += 8;
-                if (y_end <= 948) {
-                    setTimeout(draw2, time);
-                }
-            }
-
-            draw3();
-            function draw3() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.strokeStyle = "blue";
-                context.moveTo(-z_start, x);
-                context.lineTo(-z_end, x);
-                context.moveTo(700, 700);
-                context.lineTo(625, 660);
-                context.stroke();
-                z_end += 10;
-                if (z_end <= -580) {
-                    setTimeout(draw3, time);
-                }
-            }
-            draw4();
-            function draw4() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x11, y11_start);
-                context.lineTo(x11, y11_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y11_end += 7;
-                if (y11_end <= 948) {
-                    setTimeout(draw4, time);
-                }
-            }
-            draw0();
-            function draw0() {
-                context.beginPath();
-                context.lineWidth=2;
-                context.moveTo(x0, y0_start);
-                context.lineTo(x0, y0_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y0_end += 7;
-                if (y0_end <= 948) {
-                    setTimeout(draw0, time);
-
-                }
-            }
-
-            if (document.getElementById('radio1').checked) {
-                document.getElementById('check1').style.visibility = 'visible';
-                document.getElementById('check3').style.visibility = 'hidden';
-                document.getElementById('check2').style.visibility = 'hidden';
-                // document.getElementById('simscreen').style.visibility = 'hidden';
-            } else {
-                // document.getElementById('simscreen1').style.visibility = 'visible';
-                document.getElementById('check3').style.visibility = 'hidden';
-            }
-        }
-        // //variables
-        var x1 = 900;
-        var y1_start = 900;
-        var y1_end = 901;
-        var z1_start = -900;
-        var z1_end = -900;
-        var x12 = 545;
-        var y12_start = 725;
-        var y12_end = 725;
-
-        var x01 = 130;
-        var y01_start = 925;
-        var y01_end = 893;
-        const time1=1;
-
-        function check2(){
-            var canvas = document.getElementById('simscreen');
-            var context = canvas.getContext('2d');
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            var imageObj = new Image();
-            imageObj.onload = function () {
-                context.drawImage(imageObj, 90, 60);
-            };
-            imageObj.src = 'graph2.png';
-
-            draw1();
-            function draw1() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.arc(900,900,3,0,2*Math.PI,false);
-                context.fill();
-                context.moveTo(y1_start, x1);
-                context.lineTo(y1_end, x1);
-                context.strokeStyle = "black";
-                context.stroke();
-                y1_end += 10;
-                if (y1_end <= 1420) {
-                    setTimeout(draw1, time1);
-                }
-            }
-            draw2();
-            function draw2() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x1, y1_start);
-                context.lineTo(x1, y1_end);
-                context.strokeStyle = "red";
-                context.stroke();
-                y1_end += 8;
-                if (y1_end <= 945) {
-                    setTimeout(draw2, time1);
-                }
-            }
-            draw3();
-            function draw3() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.strokeStyle = "blue";
-                context.moveTo(-z1_start,x1);
-                context.lineTo(-z1_end, x1);
-                context.moveTo(900, 900);
-                context.lineTo(545, 725);
-                context.stroke();
-                z1_end += 10;
-                if (z1_end <= -128) {
-                    setTimeout(draw3, time1);
-                }
-            }
-            draw21();
-            function draw21() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x12, y12_start);
-                context.lineTo(x12, y12_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y12_end += 10;
-                if (y12_end <= 945) {
-                    setTimeout(draw21, time1);
-                }
-            }
-
-            draw01();
-            function draw01() {
-                context.beginPath();
-                context.lineWidth=2;
-                context.moveTo(x01, y01_start);
-                context.lineTo(x01, y01_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y01_end += 6;
-                if (y01_end <= 950) {
-                    setTimeout(draw01, time);
-
-                }
-            }
-
-            if(document.getElementById('radio2').checked)
-            {
-                document.getElementById('check2').style.visibility = 'visible';
-                document.getElementById('check1').style.visibility = 'hidden';
-                document.getElementById('check3').style.visibility = 'hidden';
-            }
-            else
-            {
-                document.getElementById('check3').style.visibility = 'hidden';
-            }
-        }
-        // variables
-        var x3 = 750;
-        var y3_start = 750;
-        var y3_end = 751;
-        var z3_start = -900;
-        var z3_end = -750;
-
-        var x112 = 609;
-        var y112_start = 672;
-        var y112_end = 671;
-
-        var x011 = 512;
-        var y011_start = 750;
-        var y011_end = 801;
-        var time2=10;
-
-        function check3() {
-            var canvas = document.getElementById('simscreen');
-            var context = canvas.getContext('2d');
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            var imageObj = new Image();
-            imageObj.onload = function () {
-                context.drawImage(imageObj, 90, 60);
-            };
-            imageObj.src = 'graph2.png';
-            draw12();
-
-            function draw12() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.arc(750, 750, 3, 0, 2 * Math.PI, false);
-                context.fill();
-                context.moveTo(y3_start, x3);
-                context.lineTo(y3_end, x3);
-                context.strokeStyle = "black";
-                context.stroke();
-                y3_end += 10;
-                if (y3_end <= 1420) {
-                    setTimeout(draw12, time2);
-                }
-
-            }
-
-            draw22();
-
-            function draw22() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x3, y3_start);
-                context.lineTo(x3, y3_end);
-                context.strokeStyle = "red";
-                context.stroke();
-                y3_end += 1;
-                if (y3_end <= 945) {
-                    setTimeout(draw22, time2);
-                }
-            }
-
-            draw32();
-
-            function draw32() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.strokeStyle = "blue";
-                context.moveTo(-z3_start, x3);
-                context.lineTo(-z3_end, x3);
-                context.moveTo(750, 750);
-                context.lineTo(610, 675);
-                context.stroke();
-                z3_end += 10;
-                if (z3_end <= -509) {
-                    setTimeout(draw32, time2);
-                }
-            }
-
-            draw211();
-
-            function draw211() {
-                context.beginPath();
-                context.lineWidth = 2;
-                context.moveTo(x112, y112_start);
-                context.lineTo(x112, y112_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y112_end += 6;
-                if (y112_end <= 950) {
-                    setTimeout(draw211, time2);
-                }
-            }
-            draw011();
-            function draw011() {
-                context.beginPath();
-                context.lineWidth=2;
-                context.moveTo(x011, y011_start);
-                context.lineTo(x011, y011_end);
-                context.strokeStyle = "brown";
-                context.stroke();
-                y011_end += 6;
-                if (y011_end <= 948) {
-                    setTimeout(draw011, time2);
-
-                }
-            }
-
-            if (document.getElementById('radio3').checked) {
-                document.getElementById('check1').style.visibility = 'hidden';
-                document.getElementById('check2').style.visibility = 'hidden';
-                document.getElementById('check3').style.visibility = 'visible';
-            } else {
-                document.getElementById('check3').style.visibility = 'hidden';
-            }
-        }
-
-    </script>
 </head>
-<!--<body>-->
-<body onload="body();" >
+
+<body onload="body();">
+<!-- Defining Container for Simulation -->
 <noscript>
     The simulation requires JavaScript to be enabled.
 </noscript>
 <div id="container">
-    <div id="simtitle">Psychrometric chart</div>
-    <div id="scroll_div" style="max-height:400px; max-width:550px;overflow: scroll;">
-        <canvas id="simscreen" height="1032px" width="1522px" >
-        </canvas>
+    <div id="simtitle">Thermodynamics data handbook</div>
+    <!-- Region for simulation display -->
 
+    <div id="scroll_div" style="max-height:390px; max-width:590px;overflow: scroll;">
+        <canvas id="simscreen" height="1150px" width="1200px" style="z-index: 10">
+            <img id="image1" width="1200px" height="900px" src="super.png" style="z-index: -1">
+            <img id="image2" width="900px" height="900px" src="graph.png" style="z-index: -2">
+            <img id="image3" width="1108px" height="1140px" src="superheat1.png" style="z-index: -3"   >
+        </canvas>
     </div>
-    <div style="width:200px;">
-    </div>
+    <div style="width:200px;"></div>
+
     <div id="titleincanvas"></div>
-    <div id="commentboxleft"></div>
-    <div id="commentboxright"></div>
+    <!-- Region for comment / question prompts -->
+
+    <div id="commentboxleft">
+        <p id="p1" style="line-height:0"></p>
+        <p id="p2" style="line-height:0"></p>
+        <p id="p3" style="line-height:0"></p>
+    </div>
+
+    <div id="commentboxright">
+        <p id="p11" style="line-height:0"></p>
+        <p id="p22" style="line-height:0"></p>
+        <p id="p33" style="line-height:0"></p>
+    </div>
+
+    <!-- DND-Title of region for variables display -->
     <div id="vartitle">VARIABLES</div>
 
+    <!-- Region for Input parameters of simulation -->
     <div id="variables">
-
         <div class="variable">
-            <div class="varname">
-                <p style="position:absolute;left:-10px; top:-10px;font-family:verdana; font-size:12px;"><br>Dry bulb temp:<br><br>Humidity ratio:<br><br>Relative<br> humidity:<br><br>Wet bulb temp:<br><br>Enthalpy:<br><br>Dew point<br> temp:<br></p>
-                <p id="check1"style="position:absolute;color:red;left:90px; top:2px;font-family:verdana; font-size:12px;">19.5(<sup>o</sup>C)<br><br>0.009kg/kg<br><br><br>70%<br><br>15.99(<sup>o</sup>C)<br><br>44.7kJ/kg<br><br><br>13.9(<sup>o</sup>C)</p>
-                <p id="check2"style="position:absolute;color:red;left:90px; top:2px;font-family:verdana; font-size:12px;">29(<sup>o</sup>C)<br><br>0.0022kg/kg<br><br><br>9%<br><br>12.44(<sup>o</sup>C)<br><br>34.85KJ/kg<br><br><br>-6.25(<sup>o</sup>C)</p>
-                <p id="check3"style="position:absolute;color:red;left:90px; top:2px;font-family:verdana; font-size:12px;">21.5(<sup>o</sup>C)<br><br>0.0078kg/kg<br><br><br>49%<br><br>14.87(<sup>o</sup>C)<br><br>41.48kJ/kg<br><br><br>10.38(<sup>o</sup>C)</p>
+            <div class="varname"align="left">
+                <p  style="font-size:96%;"><b>1)Saturated</b></p><br>
+                <p  style="font-size:96%;"align="center">Pressure(kPa)</p><br>
 
+                <select id="psat" name="type"  onchange="check1(this.value);">
+                    <option value="select" disabled selected id="select1" >select</option>
+                    <option value="1">160</option>
+                    <option value="2">320</option>
+                    <option value="3">500</option>
+                </select>
+                <br>
+
+                <div class="varname">
+                    <p style="font-size:95%;">Volume(m<sup>3</sup>/kg)</p><br>
+
+                    <select id="vsat" name="type"  onchange="check2(this.value);" style = "color:black" disabled>
+                        <option value="select"></option>
+                        <option value="1">80</option>
+                        <option value="2">160</option>
+                        <option value="3">200</option>
+                    </select>
+
+                    <br>
+                    <p  style="font-size:96%;">Mass=4kg</p><br>
+                </div>
+                <br>
+
+                <p  style="font-size:96%;"><b>2)Superheated</b></p><br>
+                <div class="varname">
+                    <p style="font-size:95%;">Pressure(MPa)</p><br>
+                    <select name="type"  onchange="check3(this.value);">
+                        <option value="select" disabled selected id="select3" >select</option>
+                        <option value="1">0.5</option>
+                        <option value="2">8.0</option>
+                        <option value="3">17.5</option>
+                    </select>
+                    <br>
+
+                    <div class="varname">
+                        <p style="font-size:95%;">Enthalpy(kJ/kg)</p><br>
+                        <select name="type"  onchange="check4(this.value);">
+                            <option value="select" disabled selected id="select4" >select</option>
+                            <option value="1">2961</option>
+                            <option value="2">3273.3</option>
+                            <option value="3">3561.3</option>
+                        </select>
+                        <br>
+                        <p  style="font-size:96%;">Mass=4kg</p><br>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!--    DND-Title of region for controls display-->
+    <!-- DND-Title of region for controls display -->
     <div id="ctrltitle">CONTROLS</div>
-    <!-- Region for User controls of simulation-->
-    <div id="controls" align="center">
-        EXAMPLE 1:<input type="radio" id="radio1"  name="chart" onclick="check1();"><br>
-        EXAMPLE 2:<input type="radio" id="radio2"  name="chart" onclick="check2();"><br>
-        EXAMPLE 3:<input type="radio" id="radio3"  name="chart" onclick="check3();"><br><br>
+    <!-- Region for User controls of simulation -->
+    <div id="controls">
         <img id="rotationbutton" onclick="location.reload();" src="sins/bluecwdull.png" />
     </div>
     <!-- DND-Copyright display-->
     <div id="copyright" title="Developer : SOLVEr"> Copyright &copy; SOLVE The Virtual Lab @ NITK Surathkal </div>
-</div>
-<!--   Container div close-->
+
+</div><!-- Container div close -->
+    <script type="text/javascript" >
+
+		var canvas = document.getElementById('simscreen');
+		var context = canvas.getContext('2d');
+		var img = document.getElementById("image2");
+		context.drawImage(img, 5, 10);
+        //pressure
+        var x1 = 268;
+        var y1_start = 25;
+        var y1_end = 26;
+
+        var x2 = 195;
+        var y2_start = 25;
+        var y2_end = 26;
+
+        var x3 = 190;
+        var y3_start = 25;
+        var y3_end = 26;
+
+        var time2=10;
+        function check1(value)
+        {
+            if(value == 1){
+                // alert("hi 1");
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -100);
+				document.getElementById("vsat").value = 1;
+                draw();
+                
+            }else if(value == 2){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -300);
+				document.getElementById("vsat").value = 2;
+                draw1();
+            }
+            else if(value == 3){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -400);
+				document.getElementById("vsat").value = 3;
+                draw2();
+            }
+        }
+		
+		
+
+        //Volume
+
+        var x12 =  248;
+        var y12_start = 80;
+        var y12_end = 81;
+
+        var x22 = 195;
+        var y22_start = 80;
+        var y22_end = 81;
+
+        var x33 = 190;
+        var y33_start = 80;
+        var y33_end = 81;
+
+        var time1=10;
+		
+		function draw() {
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "green";
+			context.fillStyle = "yellow";
+			// Turn transparency on
+			context.rect(20, 245, 1020, 25);
+			context.stroke();
+			context.globalAlpha = 0.2;
+			context.fill();
+			context.globalAlpha = 1;
+		}
+		
+		function draw1() {
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "green";
+			context.fillStyle = "yellow";;
+			context.rect(20, 170, 1020, 25);
+			context.stroke();
+			context.globalAlpha = 0.2;
+			context.fill();
+			context.globalAlpha = 1;
+		}
+		
+		function draw2() {
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "green";
+			context.fillStyle = "yellow";
+			context.rect(20, 165, 1020, 25);
+			context.stroke();
+			context.globalAlpha = 0.2;
+			context.fill();
+			context.globalAlpha = 1;
+		}
+
+
+///VOLUME LINE
+	function draw11() {
+		context.beginPath();
+		context.lineWidth = 2;
+		context.moveTo(y12_start, x12);
+		context.lineTo(y12_end, x12);
+		context.strokeStyle = "green";
+		context.stroke();
+		y12_end += 7;
+		if (y12_end <= 1020) {
+			setTimeout(draw11, time1);
+			console.log(draw11);
+			// document.getElementById("p11").innerHTML="X = V-V<sub>f</sub>/V<sub>fg</sub>=0.157";
+			// document.getElementById('p1').style.visibility = 'hidden';
+
+		}
+	}
+        
+	function draw22() {
+		context.beginPath();
+		context.lineWidth = 2;
+		context.moveTo(y22_start, x22);
+		context.lineTo(y22_end, x22);
+		context.strokeStyle = "green";
+		context.stroke();
+		y22_end += 7;
+		if (y22_end <= 1020) {
+			setTimeout(draw22, time2);
+			console.log(draw22);
+			// document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.05m<sup>3</sup>/kg";
+		}
+	}
+
+	function draw33() {
+		context.beginPath();
+		context.lineWidth = 2;
+		context.moveTo(y33_start, x33);
+		context.lineTo(y33_end, x33);
+		context.strokeStyle = "green";
+		context.stroke();
+		y33_end += 7;
+		if (y33_end <= 1020) {
+			setTimeout(draw33, time2);
+			console.log(draw33);
+			// document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.10m<sup>3</sup>/kg";
+		}
+	}
+
+
+
+        function check2(value)
+        {
+            if(value == 1){
+                // alert("hi 1");
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -100);
+
+                draw11();
+                function draw11() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y12_start, x12);
+                    context.lineTo(y12_end, x12);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y12_end += 7;
+                    if (y12_end <= 1020) {
+                        setTimeout(draw11, time1);
+                        console.log(draw11);
+                        // document.getElementById("p11").innerHTML="X = V-V<sub>f</sub>/V<sub>fg</sub>=0.157";
+                        // document.getElementById('p1').style.visibility = 'hidden';
+
+                    }
+                }
+            }else if(value == 2){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -300);
+                draw22();
+                function draw22() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y22_start, x22);
+                    context.lineTo(y22_end, x22);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y22_end += 7;
+                    if (y22_end <= 1020) {
+                        setTimeout(draw22, time2);
+                        console.log(draw22);
+                        // document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.05m<sup>3</sup>/kg";
+                    }
+                }
+            }
+            else if(value == 3){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image2");
+                context.drawImage(img, 5, -400);
+                draw33();
+                function draw33() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y33_start, x33);
+                    context.lineTo(y33_end, x33);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y33_end += 7;
+                    if (y33_end <= 1020) {
+                        setTimeout(draw33, time2);
+                        console.log(draw33);
+                        // document.getElementById("p2").innerHTML="volume = V/m=0.080/4kg=0.10m<sup>3</sup>/kg";
+                    }
+                }
+            }else{
+            }
+        }
+		
+
+
+
+
+
+
+
+        //superheated
+
+        var x01 = 255;
+        var y01_start = 280;
+        var y01_end = 281;
+
+        var x02 = 250;
+        var y02_start = 365;
+        var y02_end = 366;
+
+        var x03 = 250;
+        var y03_start = 200;
+        var y03_end = 201;
+
+        var time5=10;
+        function check3(value)
+        {
+            if(value == 1){
+                // alert("hi 1");
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, 5, -10);
+
+                draw0();
+                function draw0() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y01_start, x01);
+                    context.lineTo(y01_end, x01);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y01_end += 7;
+                    if (y01_end <= 350) {
+                        setTimeout(draw0, time5);
+                        console.log(draw0);
+                        // document.getElementById("p11").innerHTML="volume = V/m=0.080/4kg=0.02m<sup>3</sup>/kg";
+                        // document.getElementById('p2').style.visibility = 'hidden';
+                    }
+                }
+            }else if(value == 2){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, -650, -490);
+                // var canvas=document.getElementById('type');
+                // var context=canvas.options[canvas.selectedIndex].text
+                draw01();
+                function draw01() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y02_start, x02);
+                    context.lineTo(y02_end, x02);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y02_end += 7;
+                    if (y02_end <= 435) {
+                        setTimeout(draw01, time5);
+                        console.log(draw01);
+                        // document.getElementById("p22").innerHTML="volume = V/m=0.080/4kg=0.05m<sup>3</sup>/kg";
+                    }
+                }
+            }
+            else if(value == 3){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, -450, -950);
+                draw02();
+                function draw02() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y03_start, x03);
+                    context.lineTo(y03_end, x03);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y03_end += 7;
+                    if (y03_end <= 275) {
+                        setTimeout(draw02, time5);
+                        console.log(draw02);
+                        // document.getElementById("p33").innerHTML="volume = V/m=0.080/4kg=0.10m<sup>3</sup>/kg";
+                    }
+                }
+            }else{
+            }
+        }
+
+        var x121 =  255;
+        var y121_start = 110;
+        var y121_end = 111;
+
+        var x221 = 250;
+        var y221_start = 180;
+        var y221_end = 181;
+
+        var x331 = 250;
+        var y331_start = 15;
+        var y331_end = 16;
+
+        var time4=10;
+        function check4(value)
+        {
+            if(value == 1){
+                // alert("hi 1");
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, 5, -10);
+
+                draw111();
+                function draw111() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y121_start, x121);
+                    context.lineTo(y121_end, x121);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y121_end += 7;
+                    if (y121_end <= 185) {
+                        setTimeout(draw111, time4);
+                        console.log(draw111);
+                        document.getElementById("p11").innerHTML="volume = V/m=0.47443*4kg=1.89772m<sup>3</sup>";
+                        // document.getElementById('p33').style.visibility = 'hidden';
+
+                    }
+                }
+            }else if(value == 2){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, -650, -490);
+                draw221();
+                function draw221() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y221_start, x221);
+                    context.lineTo(y221_end, x221);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y221_end += 7;
+                    if (y221_end <= 275) {
+                        setTimeout(draw221, time4);
+                        console.log(draw221);
+                        document.getElementById("p22").innerHTML="volume = V/m=0.038194*4kg=0.152776m<sup>3</sup>/kg";
+                    }
+                }
+            }
+            else if(value == 3){
+                var canvas = document.getElementById('simscreen');
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                var img = document.getElementById("image1");
+                context.drawImage(img, -450, -950);
+                draw331();
+                function draw331() {
+                    context.beginPath();
+                    context.lineWidth = 2;
+                    context.moveTo(y331_start, x331);
+                    context.lineTo(y331_end, x331);
+                    context.strokeStyle = "green";
+                    context.stroke();
+                    y331_end += 7;
+                    if (y331_end <= 110) {
+                        setTimeout(draw331, time4);
+                        console.log(draw331);
+                        document.getElementById("p33").innerHTML="volume = V/m=0.021073*4kg=0.084292m<sup>3</sup>/kg";
+                    }
+                }
+            }else{
+            }
+        }
+
+
+
+
+    </script>
 </body>
 </html>
