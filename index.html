@@ -102,10 +102,33 @@
         </div>
     </div>
     <!-- DND-Title of region for controls display -->
-    <div id="ctrltitle">CONTROLS</div>
+    <div id="ctrltitle">FORMULAE</div>
     <!-- Region for User controls of simulation -->
-    <div id="controls">
-        <img id="rotationbutton" onclick="location.reload();" src="sins/bluecwdull.png" />
+    <div id="controls" style="display: inline-block">
+        <!-- <img id="rotationbutton" onclick="location.reload();" src="sins/bluecwdull.png" /> -->
+		<div style="position:relative; left: 15px;">
+			<span class="tooltip" style="border-bottom:1px dotted ; color:red;text-align:justify">Saturated
+			<span class="tooltiptext" style="left: 0px;width: 150px">
+			Saturation Temperature(T) = T<sub>sat</sub><br>
+			Quality(x) = (v-v<sub>f</sub>)/v<sub>fg</sub></sub><br>
+			Enthalpy(h) = h<sub>f</sub> + xh<sub>fg</sub><br>
+			Mass(m<sub>g</sub>) = x*Mass<br>
+			Volume(V<sub>g</sub>) = m<sub>g</sub> * v<sub>g</sub><br>
+			
+			</span>
+			</span>
+			<span class="tooltip" style="border-bottom:1px dotted ; color:red;text-align:justify;left: 75px">Superheated
+			<span class="tooltiptext" style="left: -60px">
+			Specific Volume<br>
+			Saturation Temperature<br>
+			Enthalpy<br>
+			Mass<br>
+			Volume<br>
+			
+			</span>
+			</span>
+		</div>
+		
     </div>
     <!-- DND-Copyright display-->
     <div id="copyright" title="Developer : SOLVEr"> Copyright &copy; SOLVE The Virtual Lab @ NITK Surathkal </div>
@@ -179,7 +202,10 @@
 			context.globalAlpha = 0.2;
 			context.fill();
 			context.globalAlpha = 1;
+			displayTextAbove(225,240);
 		}
+		
+		
 		
 		//p:320 v:160
 		function draw1() {
@@ -192,6 +218,7 @@
 			context.globalAlpha = 0.2;
 			context.fill();
 			context.globalAlpha = 1;
+			displayTextAbove(150,165);
 		}
 		
 		//p:500 v:200
@@ -205,9 +232,37 @@
 			context.globalAlpha = 0.2;
 			context.fill();
 			context.globalAlpha = 1;
+			displayTextAbove(145,160);
 		}
 
+		
+		function displayTextAbove(rectTop,textTop){
+			context.beginPath();
+			context.lineWidth = 2;
+			context.strokeStyle = "black";
+			context.fillStyle = "yellow";
+			context.rect(20, rectTop, 1020, 20);
+			context.fill();
+			context.stroke();
 
+			context.fillStyle = "black";
+			// Turn transparency on
+			context.fillText("P(kPa)",25, textTop);
+			context.fillText("Tsat(°C)",80, textTop);
+			context.fillText("Vf",150, textTop);
+			context.fillText("Vg",255, textTop);
+			context.fillText("uf",360, textTop);
+			context.fillText("ufg",420, textTop);
+			context.fillText("ug",495, textTop);
+			context.fillText("hf",575, textTop);
+			context.fillText("hfg",635, textTop);
+			context.fillText("hg",705, textTop);
+			context.fillText("sf",790, textTop);
+			context.fillText("sfg",875, textTop);
+			context.fillText("sg",955, textTop);
+			context.stroke();
+
+		}
 
 
 

@@ -346,6 +346,35 @@ select#temp3
 	left: 250px; top:100px;
 }
 
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-family: Comic Sans MS;
+	font-size:14px;
+}
+
+.tooltip .tooltiptext {
+	font-family: Comic Sans MS;
+	font-size:12px;
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  left: 0px;
+  top:25px;
+  z-index: 100;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 /* Theme edited for Simulation UI */
 
 /*
