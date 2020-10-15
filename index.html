@@ -44,8 +44,15 @@
             draw1();
             function draw1() {
                 context.beginPath();
-                context.lineWidth = 2;
+                // context.lineWidth = 2;
+                context.fill();
                 context.arc(700,700,3,0,2*Math.PI,false);
+                context.strokeStyle = "green";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 2;
+                // context.arc(700,700,3,0,2*Math.PI,false);
                 context.fill();
                 context.moveTo(y_start, x);
                 context.lineTo(y_end, x);
@@ -125,10 +132,10 @@
             }
             document.getElementById("p1").innerHTML="Dry bulb temp=Red";
             document.getElementById("p2").innerHTML="Humidity ratio=Black";
-            document.getElementById("p3").innerHTML="Relative Humidity= ";
-            document.getElementById("p11").innerHTML="Wet bulb temp=";
-            document.getElementById("p22").innerHTML="Enthalpy=";
-            document.getElementById("p33").innerHTML="Dew point temp=";
+            document.getElementById("p3").innerHTML="Relative Humidity=Green";
+            document.getElementById("p11").innerHTML="Wet bulb temp=Blue";
+            document.getElementById("p22").innerHTML="Enthalpy=light blue";
+            document.getElementById("p33").innerHTML="Dew point temp=brown";
 
         }
         // //variables
@@ -159,8 +166,15 @@
             draw1();
             function draw1() {
                 context.beginPath();
-                context.lineWidth = 2;
+                // context.lineWidth = 2;
+                context.fill();
                 context.arc(900,900,3,0,2*Math.PI,false);
+                context.strokeStyle = "green";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 2;
+                // context.arc(900,900,3,0,2*Math.PI,false);
                 context.fill();
                 context.moveTo(y1_start, x1);
                 context.lineTo(y1_end, x1);
@@ -240,10 +254,11 @@
             }
             document.getElementById("p1").innerHTML="Dry bulb temp=Red";
             document.getElementById("p2").innerHTML="Humidity ratio=Black";
-            document.getElementById("p3").innerHTML="Relative Humidity= ";
-            document.getElementById("p11").innerHTML="Wet bulb temp=";
-            document.getElementById("p22").innerHTML="Enthalpy=";
-            document.getElementById("p33").innerHTML="Dew point temp=";
+            document.getElementById("p3").innerHTML="Relative Humidity=Green";
+            document.getElementById("p11").innerHTML="Wet bulb temp=Blue";
+            document.getElementById("p22").innerHTML="Enthalpy=light blue";
+            document.getElementById("p33").innerHTML="Dew point temp=brown";
+
 
         }
         // variables
@@ -275,8 +290,15 @@
 
             function draw12() {
                 context.beginPath();
-                context.lineWidth = 2;
+                // context.lineWidth = 2;
+                context.fill();
                 context.arc(750, 750, 3, 0, 2 * Math.PI, false);
+                context.strokeStyle = "green";
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 2;
+                // context.arc(750, 750, 3, 0, 2 * Math.PI, false);
                 context.fill();
                 context.moveTo(y3_start, x3);
                 context.lineTo(y3_end, x3);
@@ -357,12 +379,12 @@
             } else {
                 document.getElementById('check3').style.visibility = 'hidden';
             }
-            document.getElementById("p1").innerHTML="Dry bulb temp    = Red";
-            document.getElementById("p2").innerHTML="Humidity ratio   =Black";
-            document.getElementById("p3").innerHTML="Relative Humidity= ";
-            document.getElementById("p11").innerHTML="Wet bulb temp   =";
-            document.getElementById("p22").innerHTML="Enthalpy        =";
-            document.getElementById("p33").innerHTML="Dew point temp  =";
+            document.getElementById("p1").innerHTML="Dry bulb temp=Red";
+            document.getElementById("p2").innerHTML="Humidity ratio=Black";
+            document.getElementById("p3").innerHTML="Relative Humidity=Green";
+            document.getElementById("p11").innerHTML="Wet bulb temp=Blue";
+            document.getElementById("p22").innerHTML="Enthalpy=light blue";
+            document.getElementById("p33").innerHTML="Dew point temp=brown";
 
         }
 
