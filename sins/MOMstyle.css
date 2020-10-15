@@ -94,40 +94,40 @@ canvas#simscreen
 }
 
 
-/*div#commentboxleft*/
-/*{*/
-/*	border-top-style: dotted;*/
-/*	border-top-width: 2px;*/
-/*	border-top-color: #f6ebed;*/
-/*	position:absolute;*/
-/*	left:28px;*/
-/*	top:505px;*/
-/*	height: 65px;*/
-/*	width: 285px;*/
-/*	color: #e7722b;*/
-/*	text-align: left;*/
-/*	font-size: 15px;*/
-/*	font-family: "Comic Sans MS", cursive, sans-serif;*/
-/*}*/
+div#commentboxleft
+{
+	border-top-style: dotted;
+	border-top-width: 2px;
+	border-top-color: #f6ebed;
+	position:absolute;
+	left:28px;
+	top:505px;
+	height: 65px;
+	width: 285px;
+	color: #e7722b;
+	text-align: left;
+	font-size: 15px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
-/*div#commentboxright*/
-/*{	*/
-/*	border-top-style: dotted;*/
-/*	border-top-width: 2px;*/
-/*	border-top-color: #f6ebed;	*/
-/*	border-left-style: dotted;*/
-/*	border-left-width: 2px;*/
-/*	border-left-color: #f6ebed;*/
-/*	position:absolute;*/
-/*	left:313px;*/
-/*	top: 505px;*/
-/*	height: 65px;*/
-/*	width: 285px;*/
-/*	color: #e7722b;*/
-/*	text-align: right;*/
-/*	font-size: 16px;*/
-/*	font-family: "Comic Sans MS", cursive, sans-serif;*/
-/*}*/
+div#commentboxright
+{
+	border-top-style: dotted;
+	border-top-width: 2px;
+	border-top-color: #f6ebed;
+	border-left-style: dotted;
+	border-left-width: 2px;
+	border-left-color: #f6ebed;
+	position:absolute;
+	left:313px;
+	top: 505px;
+	height: 65px;
+	width: 285px;
+	color: #e7722b;
+	text-align: left;
+	font-size: 16px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
 div#variables
 {
 	position:absolute;
