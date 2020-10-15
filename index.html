@@ -123,6 +123,13 @@
                 // document.getElementById('simscreen1').style.visibility = 'visible';
                 document.getElementById('check3').style.visibility = 'hidden';
             }
+            document.getElementById("p1").innerHTML="Dry bulb temp=Red";
+            document.getElementById("p2").innerHTML="Humidity ratio=Black";
+            document.getElementById("p3").innerHTML="Relative Humidity= ";
+            document.getElementById("p11").innerHTML="Wet bulb temp=";
+            document.getElementById("p22").innerHTML="Enthalpy=";
+            document.getElementById("p33").innerHTML="Dew point temp=";
+
         }
         // //variables
         var x1 = 900;
@@ -231,6 +238,13 @@
             {
                 document.getElementById('check3').style.visibility = 'hidden';
             }
+            document.getElementById("p1").innerHTML="Dry bulb temp=Red";
+            document.getElementById("p2").innerHTML="Humidity ratio=Black";
+            document.getElementById("p3").innerHTML="Relative Humidity= ";
+            document.getElementById("p11").innerHTML="Wet bulb temp=";
+            document.getElementById("p22").innerHTML="Enthalpy=";
+            document.getElementById("p33").innerHTML="Dew point temp=";
+
         }
         // variables
         var x3 = 750;
@@ -343,6 +357,13 @@
             } else {
                 document.getElementById('check3').style.visibility = 'hidden';
             }
+            document.getElementById("p1").innerHTML="Dry bulb temp    = Red";
+            document.getElementById("p2").innerHTML="Humidity ratio   =Black";
+            document.getElementById("p3").innerHTML="Relative Humidity= ";
+            document.getElementById("p11").innerHTML="Wet bulb temp   =";
+            document.getElementById("p22").innerHTML="Enthalpy        =";
+            document.getElementById("p33").innerHTML="Dew point temp  =";
+
         }
 
     </script>
@@ -362,8 +383,17 @@
     <div style="width:200px;">
     </div>
     <div id="titleincanvas"></div>
-    <div id="commentboxleft"></div>
-    <div id="commentboxright"></div>
+    <div id="commentboxleft">
+<!--        <p id="p1" style="line-height:0" style="height:3px;height:10px;width:10px;color:gray;background-color:red">></p>-->
+        <p id="p1" style="line-height:0"></p>
+        <p id="p2" style="line-height:0"></p>
+        <p id="p3" style="line-height:0"></p>
+    </div>
+    <div id="commentboxright">
+        <p id="p11" style="line-height:0"></p>
+        <p id="p22" style="line-height:0"></p>
+        <p id="p33" style="line-height:0"></p>
+    </div>
     <div id="vartitle">VARIABLES</div>
 
     <div id="variables">
@@ -381,7 +411,7 @@
     <!--    DND-Title of region for controls display-->
     <div id="ctrltitle">CONTROLS</div>
     <!-- Region for User controls of simulation-->
-    <div id="controls" align="center">
+    <div id="controls" align="center"><br>
         EXAMPLE 1:<input type="radio" id="radio1"  name="chart" onclick="check1();"><br>
         EXAMPLE 2:<input type="radio" id="radio2"  name="chart" onclick="check2();"><br>
         EXAMPLE 3:<input type="radio" id="radio3"  name="chart" onclick="check3();"><br><br>
